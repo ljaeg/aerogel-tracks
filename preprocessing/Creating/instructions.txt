@@ -1,0 +1,18 @@
+This directory is generally filled with files that create the artificial movies and images that
+populate the training, testing, and validation sets that we use for the neural networks.
+
+Stack_Testing.py isn't involved in the larger pipeline. I was using it more to look at how different
+stacking algorithms work. I threw it in because it saves the stacked images to a local directory,
+so it's helpful for quickly testing out different methods, which I thought you might appreciate as
+I'm not entirely happy with the current method of stacking (especially with how it stacks in the 
+X and Y directions).
+
+Stack_Dataset.py takes a hdf5 file of 3d-aerogel movies and creates an hdf5 file of stacked images
+in all 3 directions.
+
+GetSomeImages.py is used to download a few movies from an hdf5 file on the Linux machine. This was 
+helpful for me because I was predominantly working from my laptop, so with this I didn't have to 
+do screen sharing to visually check that the hdf5 file I created actually looks ok.
+
+makeWholeDataset.py is used to create a hdf5 file with 3D movies. It uses some convenient functions
+from construct.py, which generally has functions that help with loading in movies and pasting tracks.

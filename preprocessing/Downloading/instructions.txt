@@ -1,0 +1,14 @@
+If you were doing this from scratch, you would use CollectAmazonCodes.py to get a big list of 
+amazon codes, then you would use that list of amazon codes to download a bunch of the movies
+onto the local machine with download_movie.py. However, I already have a txt file with 20,000
+amazon codes, and as of writing this I have 2263 aerogel movies stored in ~/Desktop/aerogel_preprocess/blanks
+as folders of 30-45 pngs, as 1.png being the topmost image of the movie, 2.png being one frame
+lower, and so on. To download more movies from the current list of amazon codes, simply 
+run download_movie.py, I have it configured to pick up where it left off so it won't waste any time
+re-downloading the movies already downloaded or anything like that. Note that it takes quite a long
+time to download these movies, which I believe is a bottleneck created by having to access the 
+amazon server every time.
+
+The TrackFromMovie.py is used for extracting a movie of a small rectangle that contains the track
+from the larger full-size movie. This smaller movie of the track is of course what we use to paste
+the track into blank movies to create the larger training, testing, and validation sets.
